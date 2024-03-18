@@ -7,7 +7,7 @@ const Selector = (domItem) => document.querySelector(domItem);
 const timeLine = Selector("#timeLine");
 
 // Realizar una petición fetch para obtener el archivo JSON "zelda-timeLine.json"
-fetch("zelda-timeLine.json")
+fetch("zelda-timeline.json")
   .then((response) => response.json()) // Convertir la respuesta a JSON
   .then((jsonData) => {
     // Ordenar los datos por fecha de forma ascendente

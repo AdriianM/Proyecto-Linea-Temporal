@@ -15,19 +15,48 @@ h1 {
 }
 
 #timeLine ul {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 2;
   justify-content: center;
-  gap: 1rem;
 }
 
 li {
-  border: 1px solid rebeccapurple;
+  background-color: rgba(255, 255, 255, 0.714);
+  border: 2px ridge rgb(66, 66, 13);
+  border-radius: 3%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0.5rem;
+  height: 90vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 50% 30%;
+}
+
+li p#dateEvent {
+  color: black;
+  font-size: 1.5rem;
+  grid-row: 1;
+  background-color: rgb(220, 220, 15);
+  border-top-right-radius: 70%;
+  border-bottom-right-radius: 70%;
+}
+li p#titleEvent {
+  color: black;
+  font-size: 1.4rem;
+  grid-row: 2;
+  background-color: rgb(179, 179, 7);
+  border-top-right-radius: 70%;
+  border-bottom-right-radius: 70%;
+}
+li img#imgEvent {
+  justify-self: center;
+  grid-row: 3;
+}
+li p#textEvent {
+  background-color: yellowgreen;
+  color: rgb(29, 38, 6);
+  grid-row: 4;
 }
 
 @media screen and (min-width: 600px) {
@@ -36,8 +65,29 @@ li {
   }
 
   #timeLine {
-    width: 60vw;
+    width: 70vw;
     margin: auto;
+  }
+  li {
+    height: 70vh;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    background-color: rgb(5, 89, 5);
+  }
+  #timeLine {
+    width: 40vw;
+    margin: auto;
+  }
+  #timeLine ul {
+    display: grid;
+    grid-template-columns: 40vw 40vw;
+    justify-content: center;
+  }
+  li {
+    height: 80vh;
   }
 }
 
