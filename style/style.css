@@ -10,6 +10,39 @@ body {
   font-family: "Arial", sans-serif;
 }
 
+h1 {
+  text-align: center;
+}
+
+#timeLine ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+li {
+  border: 1px solid rebeccapurple;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-color: gray;
+  }
+
+  #timeLine {
+    width: 60vw;
+    margin: auto;
+  }
+}
+
+/*
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -17,11 +50,9 @@ body {
   text-align: center;
   display: flex;
 }
-#timeLine ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
+
+
 #timeLine ul li {
   width: 80%;
 }
@@ -52,16 +83,14 @@ p {
 
 #dateEvent {
   border: solid 1px red;
-}
+} 
 
-/* Diseñando para pantalla de tablet */
 @media screen and (min-width: 800px) {
 }
 
 #timeLine ul {
   display: flex;
   flex-wrap: wrap;
-
 }
 
 #timeLine ul li {
@@ -69,6 +98,8 @@ p {
   width: 30%;
 }
 
-/* Diseñando para pantalla de ordenador */
+
 @media screen and (min-width: 1000px) {
 }
+
+*/
