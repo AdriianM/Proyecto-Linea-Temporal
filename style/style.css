@@ -123,7 +123,7 @@ ul li p#textEvent::before {
   z-index: -1;
   bottom: 0.25rem;
 }
-@media (min-width: 800px) {
+@media (min-width: 1100px) {
   ul {
     grid-template-columns: 1fr 0.25rem 1fr;
   }
@@ -147,8 +147,9 @@ ul li p#textEvent::before {
   }
 
   ul li:nth-child(odd) p#dateEvent::after {
+    /* esto hace que desaparezca el circulo a la izquierda de los eventos de columna izquierda */
     transform: translate(-50%, -50%);
-    left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+    left: calc(100% + 2rem + 0.25rem / 2);
   }
   ul li:nth-child(odd) p#dateEvent {
     border-radius: 0 1.5rem 1.5rem 0;
