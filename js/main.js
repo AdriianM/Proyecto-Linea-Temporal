@@ -45,3 +45,48 @@ function mostrarJsonEnHTML(jsonData) {
   });
   timeLine.appendChild(lista); // Añadir la lista al elemento con id "timeLine"
 }
+// Función para manejar el evento de agregar nuevo evento
+function handleAddEvent(e) {
+  e.preventDefault();
+  const date = Selector("#date").value;
+  const title = Selector("#title").value;
+  const image = Selector("#image").value;
+  const text = Selector("#text").value;
+  
+  const newEvent = {
+    date: date,
+    title: title,
+    image: image,
+    text: text
+  };
+  
+  // Mostrar el nuevo evento en el timeline
+  mostrarNuevoEvento(newEvent);
+}
+
+// Función para mostrar un nuevo evento en el timeline
+function mostrarNuevoEvento(event) {
+  const lista = timeLine.querySelector("ul");
+  const item = document.createElement("li");
+  // Crear elementos HTML con la información del nuevo evento
+  item.innerHTML = `
+      <p>Date: ${event.date}</p>
+      <p>Title: ${event.title}</p>
+      <img src="${event.image}" alt="${event.title}">
+      <p>Text: ${event.text}</p>
+  `;
+  lista.appendChild(item); // Añadir el nuevo evento a la lista existente
+}
+
+// Agregar evento al botón de agregar
+Selector("#addEventBtn").addEventListener("click", handleAddEvent);
+
+// Función principal para cargar los datos y mostrarlos en el timeline
+async function main() {
+  const jsonData = await fetchData();
+  const jsonDataOrdenado = ordenarPorFechaAsc(jsonData);
+  mostrarJsonEnHTML(jsonDataOrdenado);
+}
+
+// Llamar a la función principal
+main();
