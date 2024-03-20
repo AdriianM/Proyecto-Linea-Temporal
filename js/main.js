@@ -45,6 +45,8 @@ function mostrarJsonEnHTML(jsonData) {
   });
   timeLine.appendChild(lista); // Añadir la lista al elemento con id "timeLine"
 }
+
+
 // Función para manejar el evento de agregar nuevo evento
 function handleAddEvent(e) {
   e.preventDefault();
@@ -78,8 +80,24 @@ function mostrarNuevoEvento(event) {
   lista.appendChild(item); // Añadir el nuevo evento a la lista existente
 }
 
+
+// Función para manejar el evento de mostrar/ocultar el formulario
+function btnForm() {
+  const formContainer = Selector("#formContainer");
+  if (formContainer.style.display === "none") {
+    formContainer.style.display = "block";
+  } else {
+    formContainer.style.display = "none";
+  }
+}
+
+// Agregar evento al botón para mostrar/ocultar el formulario
+Selector("#addBotonForm").addEventListener("click", btnForm);
+
+
 // Agregar evento al botón de agregar
-Selector("#addEventBtn").addEventListener("click", handleAddEvent);
+//Selector("#addEventBtn").addEventListener("click", handleAddEvent);
+
 
 // Función principal para cargar los datos y mostrarlos en el timeline
 async function main() {

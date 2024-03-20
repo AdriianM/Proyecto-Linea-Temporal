@@ -9,8 +9,10 @@
   <body>
     <header>
       <h1>Timeline</h1>
+      <button id="addBotonForm">Add Event</button>
     </header>
     <h2>
+    <div id="formContainer" style="display: none;">
     <form id="addEventForm">
       <label for="date">Date:</label>
       <input type="text" id="date" name="date">
@@ -20,8 +22,9 @@
       <input type="text" id="image" name="image">
       <label for="text">Text:</label>
       <input type="text" id="text" name="text">
-      <button type="submit" id="addEventBtn">Add Event</button>
+      <!--<button type="submit" id="addEventBtn">Add Event</button>-->
   </form>
+  </div>
     </h2>
     <main>
       <div id="timeLine" class="container"></div>
