@@ -3,7 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+#addEventForm {
+  background-color: rgb(166, 246, 6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#submitBtn {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: yellow;
+  border: 1px solid black;
+  border-radius: 5%;
+  cursor: pointer;
+  color: black;
+  margin-left: 6rem;
+}
 body {
   background-color: yellowgreen;
   color: black;
