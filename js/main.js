@@ -61,12 +61,26 @@ function handleAddEvent(e) {
     image: image,
     text: text,
   };
+  // Cambios que hice para limpiar el formulario y añadir la ventana popup
+  // Limpiar el formulario
+  Selector("#date").value = "";
+  Selector("#title").value = "";
+  Selector("#imageEvent").value = "";
+  Selector("#text").value = "";
 
-  // Mostrar el nuevo evento en el timeline
-  listaEventos.push(newEvent);
-  listaEventos = ordenarPorFechaAsc(listaEventos);
-  console.log(listaEventos);
-  mostrarJsonEnHTML(listaEventos);
+    // Ocultar popup
+  
+  formContainer.style.display = "none";
+
+  // Ocultar overlay
+  const overlay = Selector(".overlay");
+  overlay.style.display = "none";
+
+   // Mostrar el nuevo evento en el timeline
+ listaEventos.push(newEvent);
+ listaEventos = ordenarPorFechaAsc(listaEventos);
+ 
+ mostrarJsonEnHTML(listaEventos);
 }
 
 // Función para manejar el evento de mostrar/ocultar el formulario
