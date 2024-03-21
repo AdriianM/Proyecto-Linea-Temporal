@@ -84,7 +84,7 @@ ul li p.dateEvent::before {
   width: 1.5rem;
   aspect-ratio: 1;
   background: black;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.199) 100%, transparent);
   position: absolute;
   top: 100%;
 
@@ -105,24 +105,24 @@ ul li p.dateEvent::after {
   right: calc(100% + 2rem + 0.25rem / 2);
   /* no entiendo */
 }
-ul li p#titleEvent,
-ul li p#textEvent {
+ul li p.titleEvent,
+ul li p.textEvent {
   background: white;
   position: relative;
   padding-inline: 1.5rem;
 }
-ul li p#titleEvent {
+ul li p.titleEvent {
   overflow: hidden;
   padding-block-start: 1.5rem;
   padding-block-end: 1rem;
   font-weight: 500;
 }
-ul li p#textEvent {
+ul li p.textEvent {
   padding-block-end: 1.5rem;
   font-weight: 300;
 }
-ul li p#titleEvent::before,
-ul li p#textEvent::before {
+ul li p.titleEvent::before,
+ul li p.textEvent::before {
   content: "";
   position: absolute;
   width: 90%;
@@ -133,11 +133,11 @@ ul li p#textEvent::before {
   filter: blur(4px);
   transform: translate(-50%, 50%);
 }
-ul li p#titleEvent::before {
+ul li p.titleEvent::before {
   bottom: calc(100% + 0.125rem);
 }
 
-ul li p#textEvent::before {
+ul li p.textEvent::before {
   z-index: -1;
   bottom: 0.25rem;
 }
