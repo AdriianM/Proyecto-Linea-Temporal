@@ -82,6 +82,9 @@ ul {
   width: min(60rem, 90%); /* No entiendo */
   margin-inline: auto;
 }
+ul :not(before) {
+  background-color: white;
+}
 
 ul::before {
   content: "";
@@ -144,16 +147,15 @@ ul li p.dateEvent::after {
 
   transform: translate(50%, -50%);
   right: calc(100% + 2rem + 0.25rem / 2);
-  /* no entiendo */
 }
 ul li .imgEvent {
   max-width: 300px;
   height: auto;
   align-self: center;
+  padding: 1rem;
 }
 ul li p.titleEvent,
 ul li p.textEvent {
-  background: white;
   position: relative;
   padding-inline: 1.5rem;
 }
@@ -161,8 +163,22 @@ ul li p.titleEvent {
   overflow: hidden;
   padding-block-start: 1.5rem;
   padding-block-end: 1rem;
-  font-weight: 500;
+  font-weight: bolder;
+  text-align: center; 
+/*   text-decoration-line: underline;
+  text-underline-offset: 0.4rem;
+  */
 }
+
+ul li p.titleEvent::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 1px; /* Ajusta la distancia entre el subrayado y el texto */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  border-bottom: 2px dotted black;
+}
+
 ul li p.textEvent {
   padding-block-end: 1.5rem;
   font-weight: 300;
