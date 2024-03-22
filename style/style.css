@@ -49,11 +49,12 @@
   width: 2rem;
 }
 
-#formContainer {
-}
+/*#formContainer {
+}*/
 
 body {
-  background-color: yellowgreen;
+  background-image: url('https://iczc.cz/ao52c2uq7ehh7a2ls00s61iqkb-2_7/obrazek');
+  background-size: contain;
   color: black;
   font-family: "Arial", sans-serif;
   min-height: 100vh;
@@ -134,12 +135,23 @@ ul li p.dateEvent::before {
 
   clip-path: polygon(0 0, 100% 0, 0 100%);
   right: 0;
+
 }
+
+/*:root {
+  --color-aleatorio: rgb(
+    /* Generar valores aleatorios para los componentes rojo, verde y azul */
+   /* calc(floor(256 * random())),
+    calc(floor(256 * random())),
+    calc(floor(256 * random()))
+  );
+}*/
 ul li p.dateEvent::after {
   content: "";
   position: absolute;
   width: 2rem;
   aspect-ratio: 1;
+ /* background: var(--color-aleatorio);*/
   background: black;
   border: 0.3rem solid white;
   border-radius: 50%;

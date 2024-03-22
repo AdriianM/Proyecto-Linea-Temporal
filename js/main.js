@@ -25,7 +25,15 @@ const ordenarPorFechaAsc = (jsonData) => {
   return jsonData;
 };
 
-// Llamar a la función de ordenar por fecha
+
+// Función para generar un color aleatorio en formato RGB
+function generarColorAleatorioRGB() {
+  const red = Math.floor(Math.random() * 256);
+  const green = Math.floor(Math.random() * 256);
+  const blue = Math.floor(Math.random() * 256);
+  return `rgb(${red}, ${green}, ${blue})`;
+}
+ 
 
 // Función para mostrar los datos en formato HTML
 function mostrarJsonEnHTML(jsonData) {
@@ -33,13 +41,19 @@ function mostrarJsonEnHTML(jsonData) {
   const lista = document.createElement("ul");
   jsonData.forEach((obj) => {
     const item = document.createElement("li");
+
+   // Generar un color aleatorio en formato RGB para el elemento <li>
+   const colorAleatorioRGB = generarColorAleatorioRGB();
+   
     // Crear elementos HTML con la información de cada objeto
     item.innerHTML = `
-          <p class="dateEvent">Date: ${obj.date}</p>
+          <p class="dateEvent" style="background-color: ${colorAleatorioRGB};">Date: ${obj.date}</p>
           <p class="titleEvent">Title: ${obj.title}</p>
           <img class="imgEvent" src="${obj.image}" alt="${obj.title}">
           <p class="textEvent">${obj.text}</p>
       `;
+      
+
     lista.appendChild(item); // Añadir cada elemento a la lista
   });
   timeLine.appendChild(lista); // Añadir la lista al elemento con id "timeLine"
@@ -109,3 +123,14 @@ main();
 Selector("#closeEventBtn").addEventListener("click",()=>  {
   formContainer.style.display = "none";
 })
+/*
+// Después de agregar el nuevo evento a listaEventos
+localStorage.setItem('eventos', JSON.stringify(listaEventos));
+
+
+// Al cargar la página
+const eventosGuardados = localStorage.getItem('eventos');
+if (eventosGuardados) {
+    listaEventos = JSON.parse(eventosGuardados); 
+}
+*/
