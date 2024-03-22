@@ -20,9 +20,7 @@ const fetchData = async () => {
 // Función para ordenar los datos por fecha de forma ascendente
 const ordenarPorFechaAsc = (jsonData) => {
   jsonData.sort((a, b) => {
-    const fechaA = new Date(a.date);
-    const fechaB = new Date(b.date);
-    return fechaA - fechaB;
+    return a.date - b.date;
   });
   return jsonData;
 };
@@ -107,3 +105,7 @@ async function main() {
 
 // Llamar a la función principal
 main();
+
+Selector("#closeEventBtn").addEventListener("click",()=>  {
+  formContainer.style.display = "none";
+})
