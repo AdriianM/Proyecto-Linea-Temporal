@@ -3,13 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-#addEventForm {
-  background-color: rgb(166, 246, 6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
 
 #addBotonForm {
   font-weight: bolder;
@@ -20,7 +13,6 @@
   border: 1px solid black;
   cursor: pointer;
   color: black;
-  margin-left: 6rem;
 }
 
 #addEventBtn {
@@ -39,7 +31,7 @@
 }
 
 #closeEventBtn {
-  background-color: yellow;
+  background-color: red;
   font-size: 1rem;
   cursor: pointer;
   position: absolute;
@@ -49,12 +41,11 @@
   width: 2rem;
 }
 
-/*#formContainer {
-}*/
-
 body {
-  background-image: url('https://iczc.cz/ao52c2uq7ehh7a2ls00s61iqkb-2_7/obrazek');
-  background-size: contain;
+  background-image: url("https://iczc.cz/ao52c2uq7ehh7a2ls00s61iqkb-2_7/obrazek");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   color: black;
   font-family: "Arial", sans-serif;
   min-height: 100vh;
@@ -135,24 +126,13 @@ ul li p.dateEvent::before {
 
   clip-path: polygon(0 0, 100% 0, 0 100%);
   right: 0;
-
 }
 
-/*:root {
-  --color-aleatorio: rgb(
-    /* Generar valores aleatorios para los componentes rojo, verde y azul */
-   /* calc(floor(256 * random())),
-    calc(floor(256 * random())),
-    calc(floor(256 * random()))
-  );
-}*/
 ul li p.dateEvent::after {
   content: "";
   position: absolute;
   width: 2rem;
   aspect-ratio: 1;
- /* background: var(--color-aleatorio);*/
-  background: black;
   border: 0.3rem solid white;
   border-radius: 50%;
   top: 50%;
@@ -176,13 +156,13 @@ ul li p.titleEvent {
   padding-block-start: 1.5rem;
   padding-block-end: 1rem;
   font-weight: bolder;
-  text-align: center; 
-/*   text-decoration-line: underline;
+  text-align: center;
+  /*   text-decoration-line: underline;
   text-underline-offset: 0.4rem;
   */
 }
 
-ul li p.titleEvent::after{
+ul li p.titleEvent::after {
   content: "";
   position: absolute;
   left: 0;

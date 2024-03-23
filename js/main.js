@@ -25,7 +25,6 @@ const ordenarPorFechaAsc = (jsonData) => {
   return jsonData;
 };
 
-
 // Función para generar un color aleatorio en formato RGB
 function generarColorAleatorioRGB() {
   const red = Math.floor(Math.random() * 256);
@@ -33,7 +32,6 @@ function generarColorAleatorioRGB() {
   const blue = Math.floor(Math.random() * 256);
   return `rgb(${red}, ${green}, ${blue})`;
 }
- 
 
 // Función para mostrar los datos en formato HTML
 function mostrarJsonEnHTML(jsonData) {
@@ -42,9 +40,8 @@ function mostrarJsonEnHTML(jsonData) {
   jsonData.forEach((obj) => {
     const item = document.createElement("li");
 
-   // Generar un color aleatorio en formato RGB para el elemento <li>
-   const colorAleatorioRGB = generarColorAleatorioRGB();
-   
+    // Generar un color aleatorio en formato RGB para el elemento <li>
+    const colorAleatorioRGB = generarColorAleatorioRGB();
     // Crear elementos HTML con la información de cada objeto
     item.innerHTML = `
           <p class="dateEvent" style="background-color: ${colorAleatorioRGB};">Date: ${obj.date}</p>
@@ -52,8 +49,6 @@ function mostrarJsonEnHTML(jsonData) {
           <img class="imgEvent" src="${obj.image}" alt="${obj.title}">
           <p class="textEvent">${obj.text}</p>
       `;
-      
-
     lista.appendChild(item); // Añadir cada elemento a la lista
   });
   timeLine.appendChild(lista); // Añadir la lista al elemento con id "timeLine"
@@ -80,25 +75,25 @@ function handleAddEvent(e) {
   Selector("#imageEvent").value = "";
   Selector("#text").value = "";
 
-    // Ocultar popup
-  
+  // Ocultar popup
+
   formContainer.style.display = "none";
 
   // Ocultar overlay
   const overlay = Selector(".overlay");
   overlay.style.display = "none";
 
-   // Mostrar el nuevo evento en el timeline
- listaEventos.push(newEvent);
- listaEventos = ordenarPorFechaAsc(listaEventos);
- 
- mostrarJsonEnHTML(listaEventos);
+  // Mostrar el nuevo evento en el timeline
+  listaEventos.push(newEvent);
+  listaEventos = ordenarPorFechaAsc(listaEventos);
+
+  mostrarJsonEnHTML(listaEventos);
 }
 
 // Función para manejar el evento de mostrar/ocultar el formulario
 function btnForm() {
   const formContainer = Selector("#formContainer");
-  if (formContainer.style.display === "none") {
+  if (formContainer.style.display !== "block") {
     formContainer.style.display = "block";
   } else {
     formContainer.style.display = "none";
@@ -120,9 +115,9 @@ async function main() {
 // Llamar a la función principal
 main();
 
-Selector("#closeEventBtn").addEventListener("click",()=>  {
+Selector("#closeEventBtn").addEventListener("click", () => {
   formContainer.style.display = "none";
-})
+});
 /*
 // Después de agregar el nuevo evento a listaEventos
 localStorage.setItem('eventos', JSON.stringify(listaEventos));
