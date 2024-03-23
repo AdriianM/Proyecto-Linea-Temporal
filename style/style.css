@@ -1,25 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Madimi+One&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  background-image: url("https://iczc.cz/ao52c2uq7ehh7a2ls00s61iqkb-2_7/obrazek");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: black;
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  font-family: "IM Fell French Canon SC", sans-serif;
+}
+
 #addBotonForm {
+  font-family: "IM Fell French Canon SC", sans-serif;
   font-weight: bolder;
-  padding: 15px 30px;
+  padding: 0.5rem 1rem;
   font-size: 18px;
   margin-top: 1rem;
-  background-color: yellow;
+  background-image: linear-gradient(to right, rgb(84, 126, 173), orange);
   border: 1px solid black;
   cursor: pointer;
   color: black;
+  border-radius: 25px;
 }
 
 #addEventBtn {
+  font-family: "IM Fell French Canon SC", sans-serif;
   font-weight: bolder;
-  padding: 15px 25px;
+  padding: 0.5rem 1rem;
   font-size: 18px;
-  border-radius: 6%;
+  border-radius: 25px;
   background-color: yellow;
   border: 1px solid black;
   cursor: pointer;
@@ -41,28 +59,23 @@
   width: 2rem;
 }
 
-body {
-  background-image: url("https://iczc.cz/ao52c2uq7ehh7a2ls00s61iqkb-2_7/obrazek");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  color: black;
-  font-family: "Arial", sans-serif;
-  min-height: 100vh;
-  display: grid;
-  align-content: center;
-  gap: 2rem;
-  padding: 2rem;
-}
 h1 {
   text-align: center;
-  background-color: red;
+  background-image: linear-gradient(
+    to right,
+    rgb(84, 126, 173),
+    yellow,
+    orange
+  );
+  border-radius: 20px;
 }
 h1 span {
-  background-color: red;
+  background-image: linear-gradient(to right, yellow, orange);
   padding: 0.5rem;
-  border: 1px solid;
-  border-radius: 5%;
+  border: 1px solid linear-gradient(to right, yellow, orange, red);
+  border-radius: 50px;
+  color: black;
+  padding: 0.5rem 10% 0.5rem 10%;
 }
 
 ul {
@@ -82,7 +95,7 @@ ul::before {
   content: "";
   grid-column: 1;
   grid-row: 1 / span 30; /* para que la fila de circulos sea lo largo necesario */
-  background: rgb(225, 225, 225);
+  background: linear-gradient(to bottom, yellow, red);
   border-radius: 0.15rem; /* no entiendo , lo he modificado*/
 }
 ul li:not(:last-child) {
@@ -133,10 +146,10 @@ ul li p.dateEvent::after {
   position: absolute;
   width: 2rem;
   aspect-ratio: 1;
-  border: 0.3rem solid white;
+  border: 0.3rem solid linear-gradient(to right, yellow, orange, red);
   border-radius: 50%;
   top: 50%;
-
+  background-image: linear-gradient(to right, yellow, orange, red);
   transform: translate(50%, -50%);
   right: calc(100% + 2rem + 0.25rem / 2);
 }
@@ -215,7 +228,7 @@ ul li p.textEvent::before {
 .popup-form label {
   display: block;
   font-weight: bold;
-  background-color: yellowgreen;
+  background-color: rgb(86, 173, 173);
   border-top-right-radius: 100%;
 }
 .popup-form input:not(:first-child) {
@@ -236,6 +249,16 @@ ul li p.textEvent::before {
 }
 
 @media (min-width: 1000px) {
+  h1 span {
+    padding: 1rem 10% 1rem 10%;
+  }
+  #addBotonForm {
+    padding: 1rem 1rem;
+  }
+  #addEventBtn {
+    padding: 1rem 1rem;
+  }
+
   ul {
     grid-template-columns: 1fr 0.25rem 1fr;
     width: 80%;

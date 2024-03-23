@@ -118,7 +118,10 @@ main();
 Selector("#closeEventBtn").addEventListener("click", () => {
   formContainer.style.display = "none";
 });
-/*
+
+
+
+//LOCAL STORAGE
 // Después de agregar el nuevo evento a listaEventos
 localStorage.setItem('eventos', JSON.stringify(listaEventos));
 
@@ -128,4 +131,4 @@ const eventosGuardados = localStorage.getItem('eventos');
 if (eventosGuardados) {
     listaEventos = JSON.parse(eventosGuardados); 
 }
-*/
+
