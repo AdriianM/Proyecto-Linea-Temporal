@@ -62,8 +62,8 @@ function handleAddEvent(e) {
   const image = Selector("#imageEvent").value;
   const text = Selector("#text").value;
 
-  if (!date || !title || image || text) {
-    alert("Por favor, completa todos los campos para agregar un evento.");
+  if (!date || !title) {
+    alert("Por favor, completa los campos de fecha y título para agregar un evento.");
     return; // Detener la ejecución si algún campo está vacío
   }
 
