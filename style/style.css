@@ -39,7 +39,7 @@ body {
   padding: 0.5rem 1rem;
   font-size: 18px;
   border-radius: 25px;
-  background-color: yellow;
+  background-color: rgb(86, 173, 173);
   border: 1px solid black;
   cursor: pointer;
   color: black;
@@ -100,7 +100,7 @@ ul::before {
   border-radius: 0.15rem; /* no entiendo , lo he modificado*/
 }
 ul li:not(:last-child) {
-  margin-bottom: (2rem);
+  margin-bottom: 16rem;
 }
 ul li {
   grid-column: 2;
