@@ -140,3 +140,4 @@ window.addEventListener('load', () => {
     mostrarJsonEnHTML(listaEventos); // Mostrar eventos guardados al cargar la página
   }
 });
+
