@@ -42,6 +42,7 @@ function mostrarJsonEnHTML(jsonData) {
 
     // Generar un color aleatorio en formato RGB para el elemento <li>
     const colorAleatorioRGB = generarColorAleatorioRGB();
+
     // Crear elementos HTML con la información de cada objeto
     item.innerHTML = `
           <p class="dateEvent" style="background-color: ${colorAleatorioRGB};">Date: ${obj.date}</p>
@@ -49,8 +50,10 @@ function mostrarJsonEnHTML(jsonData) {
           <img class="imgEvent" src="${obj.image}" alt="${obj.title}">
           <p class="textEvent">${obj.text}</p>
       `;
-    lista.appendChild(item); // Añadir cada elemento a la lista
+
+  lista.appendChild(item); // Añadir cada elemento a la lista
   });
+
   timeLine.appendChild(lista); // Añadir la lista al elemento con id "timeLine"
 }
 
@@ -62,9 +65,10 @@ function handleAddEvent(e) {
   const image = Selector("#imageEvent").value;
   const text = Selector("#text").value;
 
+// Detener la ejecución si algún campo está vacío
   if (!date || !title) {
     alert("Por favor, completa los campos de fecha y título para agregar un evento.");
-    return; // Detener la ejecución si algún campo está vacío
+    return; 
   }
 
   const newEvent = {
@@ -73,6 +77,7 @@ function handleAddEvent(e) {
     image: image,
     text: text,
   };
+
   // Cambios que hice para limpiar el formulario y añadir la ventana popup
   // Limpiar el formulario
   Selector("#date").value = "";
@@ -91,6 +96,7 @@ function handleAddEvent(e) {
   // Mostrar el nuevo evento en el timeline
   listaEventos.push(newEvent);
   listaEventos = ordenarPorFechaAsc(listaEventos);
+  localStorage.setItem('eventos', JSON.stringify(listaEventos));
 
   mostrarJsonEnHTML(listaEventos);
 }
@@ -127,13 +133,10 @@ Selector("#closeEventBtn").addEventListener("click", () => {
 
 
 //LOCAL STORAGE
-// Después de agregar el nuevo evento a listaEventos
-localStorage.setItem('eventos', JSON.stringify(listaEventos));
-
-
-// Al cargar la página
-const eventosGuardados = localStorage.getItem('eventos');
-if (eventosGuardados) {
-    listaEventos = JSON.parse(eventosGuardados); 
-}
-
+window.addEventListener('load', () => {
+  const eventosGuardados = localStorage.getItem('eventos');
+  if (eventosGuardados) {
+    listaEventos = JSON.parse(eventosGuardados);
+    mostrarJsonEnHTML(listaEventos); // Mostrar eventos guardados al cargar la página
+  }
+});
